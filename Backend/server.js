@@ -1,15 +1,16 @@
 const express = require('express');
-const cors = require('cors')
- const db = require('./db');
- require('dotenv').config();
-const studentRoutes= require("./routes/studentRoutes")
+const cors = require('cors');
+const dotenv = require('dotenv');
+const studentRoutes = require('./routes/studentRoutes');
+
+dotenv.config();
 
 const app= express();
 
 app.use(express.json());
 app.use(cors());
 
-const port= 3000;
+const port= process.env.Port ||3000;
 
 app.use("/api",studentRoutes);
 

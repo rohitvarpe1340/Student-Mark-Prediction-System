@@ -1,13 +1,30 @@
 
 <nav class="nav">
   <h1 class="brand">Student Internal Marks Prediction System</h1>
- <ul class="nav-links">
+  <div class="menu-icon" (click)="toggleMenu()">
+  &#9776;
+</div>
+ <ul class="nav-links" [class.show]="menuOpen">
   <li><button type="btn" class="btn btn-outline-light" routerLink="studentlist" >Student List</button></li>
   <li><button type="btn" class="btn btn-outline-light" routerLink="student-form" >Add Student</button></li>
  </ul>
+
+
+
+ <button class="navbar-toggler"
+   type="button" data-bs-toggle="collapse"
+   data-bs-target="#navbarNav"
+   aria-controls="navbarNav"
+   aria-expanded="false"
+   aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 </nav>
 
 
-
+<h2 *ngIf="router.url === '/'">
+  {{ hello | uppercase }}
+</h2>
  <router-outlet></router-outlet>
-<app-student-result></app-student-result>
+
+<!-- <h2>{{hello|uppercase}}</h2> -->

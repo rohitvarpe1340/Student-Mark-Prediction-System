@@ -20,6 +20,11 @@ student_name = '';
 
   constructor(private studentService: StudentService) {}
 
+  isValidEmail(email:string):boolean{
+    const emailvalid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailvalid.test(email);
+  }
+
   predict() {
     if (
       !this.student_name ||
@@ -33,6 +38,10 @@ student_name = '';
       return;
     }
 
+    if(!this.isValidEmail(this.email)){
+       alert('please enter valid email');
+       return;
+    }
     this.loading = true;
 
     const payload = {
@@ -56,6 +65,9 @@ student_name = '';
       }
     });
   }
+  formreset() {
+    throw new Error('Method not implemented.');
+  }
 
 
 
@@ -73,5 +85,9 @@ student_name = '';
     }
   });
 }
+
+
+
+
 
 }

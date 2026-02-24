@@ -1,40 +1,56 @@
-.card {
-  width: 400px;
-  padding: 30px;
+.student-card {
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 10px;
+  height: 550px;
   border: 1px solid #ccc;
-  margin-top: 60px;
-  margin-left: 450px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-.card h3{
+.student-card h2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
 }
-input{
-  width: 100%;
-  margin: 5px 0;
-  border: 1px solid black;
-  height: 32px;
-  border-radius: 4px;
-}
-button{
-  width: 100%;
-  margin: 5px 0;
-  border: 1px solid black;
-  height: 35px;
-  border-radius: 8px;
 
-}
-.btn{
+.full-width {
   width: 100%;
-  margin: 5px 0;
-  border: 1px solid black;
-  height: 35px;
-  border-radius: 8px;
+}
+
+.student-card input{
+  height: 20px;
+}
+
+.student-card button{
+  height: 40px;
+  width: 50%;
+   border: 1px solid black;
+}
+.student-card button:hover{
+   background-color: rgb(57, 54, 54);
+  color: white;
+}
+.card{
+  width: 600px;
+  align-items: center;
+  margin-left: 350px;
 }
 .btn:hover{
    background-color: rgb(57, 54, 54);
   color: white;
 }
-button:hover{
-  background-color: rgb(57, 54, 54);
-  color: white;
+
+/* Mobile view */
+@media (max-width: 768px) {
+  mat-grid-list {
+    grid-template-columns: 1fr !important;
+  }
+
+
+}
+
+@media (max-width: 600px) {
+  mat-grid-list {
+    grid-template-columns: 1fr !important;
+  }
+
+
 }

@@ -1,24 +1,75 @@
-<div class="card">
-  <h3>Add Student Info</h3>
-  <input type="text" placeholder="Student Name" [value]="student_name"
-    (input)="student_name = $any($event.target).value">
+<mat-card class="student-card">
+  <mat-card-title><h2>Add Student Info</h2></mat-card-title>
 
-  <input type="email" placeholder="Email" [value]="email"
-    (input)="email = $any($event.target).value">
+  <mat-grid-list cols="2"  rowHeight="85px" gutterSize="10px">
 
-  <input type="tel" placeholder="Contact Number" [value]="contact"
-    (input)="contact = $any($event.target).value" >
+    <!-- Student Name -->
+    <mat-grid-tile colspan="2">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Student Name</mat-label>
+        <input matInput [(ngModel)]="student_name">
+      </mat-form-field>
+    </mat-grid-tile>
 
-  <input type="number" placeholder="Study Hours" [value]="study_hours" (input)="study_hours = $any($event.target).value">
-  <input type="number" placeholder="Attendance %" [value]="attendance" (input)="attendance = $any($event.target).value">
-  <input type="number" placeholder="Assignment Marks" [value]="assignment_marks" (input)="assignment_marks = $any($event.target).value">
-  <button (click)="predict()" >Predict</button>
-</div>
+    <!-- Email -->
+    <mat-grid-tile>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [(ngModel)]="email">
+      </mat-form-field>
+    </mat-grid-tile>
 
+    <!-- Contact -->
+    <mat-grid-tile>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Contact Number</mat-label>
+        <input matInput type="tel" [(ngModel)]="contact">
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <!-- Study Hours -->
+    <mat-grid-tile>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Study Hours</mat-label>
+        <input matInput type="number" [(ngModel)]="study_hours">
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <!-- Attendance -->
+    <mat-grid-tile>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Attendance %</mat-label>
+        <input matInput type="number" [(ngModel)]="attendance">
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <!-- Assignment Marks -->
+    <mat-grid-tile colspan="2">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Assignment Marks</mat-label>
+        <input matInput type="number" [(ngModel)]="assignment_marks">
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <!-- Button -->
+    <mat-grid-tile colspan="2">
+      <button
+        mat-raised-button
+    color="primary"
+    class="px-4"
+ (click)="predict()">
+        Predict
+      </button>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</mat-card>
+
+
+<br>
 <div class="card p-3 mt-3">
   <h4>Send Marks History</h4>
   <input type="email" [(ngModel)]="email" placeholder="Student Email" class="form-control mb-2">
-  <button class="btn" (click)="sendMarksEmail()">Send Email</button>
+  <button class="btn btn-primary" (click)="sendMarksEmail()">Send Email</button>
 </div>
-
 
